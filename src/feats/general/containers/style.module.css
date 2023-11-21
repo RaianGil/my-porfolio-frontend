@@ -1,0 +1,12 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.container > * {
+  max-width: 728px;
+  width: -webkit-fill-available;
+}

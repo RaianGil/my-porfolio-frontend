@@ -1,0 +1,17 @@
+# Node.js
+node_modules
+
+# Build
+/.next
+/out
+
+# Logs
+logs
+
+# Tests
+__tests__
+coverage
+
+# OS
+.DS_Store
+Thumbs.db
