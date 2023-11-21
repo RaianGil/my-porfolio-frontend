@@ -1,4 +1,4 @@
-name: raian-porfolio-depl
+name: raian-porfolio-frontend-depl
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: "raian-porfolio"
+  IMAGE_NAME: "raian-porfolio-frontend"
 
 jobs:
   sonarqube:
