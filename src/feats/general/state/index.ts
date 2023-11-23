@@ -31,7 +31,8 @@ const generalSlice = createSlice({
       })
       .addCase(useGetBackendVersion.fulfilled, (state, {payload}:PayloadAction<any>) => {
         if(payload.version)
-          state.backendVersion = payload.version.split('-')[0]
+          // state.backendVersion = payload.version.split('-')[0]
+          state.backendVersion = payload.version
       })
       .addCase(useGetBackendVersion.rejected, (state, payload:any) =>{
         console.log(payload)
