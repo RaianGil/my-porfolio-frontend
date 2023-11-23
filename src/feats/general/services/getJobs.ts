@@ -1,8 +1,8 @@
 import axios from "axios"
+import * as env from "@/data/enviroments"
 const getJobs = 
 async () => {
-  const apiUrl = process.env.API_URL || "http://localhost:3001"
-  const response = await axios.get(`${apiUrl}/jobs`)
+  const response = await axios.get(`${env.apiUrl}/jobs`)
   return response
 }
 

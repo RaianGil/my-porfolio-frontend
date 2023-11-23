@@ -1,8 +1,8 @@
 import axios from "axios"
+import * as env from "@/data/enviroments"
 const getBackendVersion = 
 async () => {
-  const apiUrl = process.env.API_URL || "http://localhost:3001"
-  const response = await axios.get(`${apiUrl}/app/version`)
+  const response = await axios.get(`${env.apiUrl}/app/version`)
   return response
 }
 
