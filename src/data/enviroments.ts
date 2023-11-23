@@ -1,1 +1,1 @@
-export const apiUrl = process.env.API_URL || "http://raian-porfolio-backend.vimcash.svc:8080"
+export const apiUrl = process.env.API_URL || "http://localhost:3001"
