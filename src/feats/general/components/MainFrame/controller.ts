@@ -28,6 +28,7 @@ class Controller {
       await dispatch(useGetProjects())
       await setDelay(.2)
       await dispatch(setReady())
+      console.log(`pRUEBA: ${process.env.API_URL}`)
     }
   }
 
