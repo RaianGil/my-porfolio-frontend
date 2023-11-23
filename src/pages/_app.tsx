@@ -10,6 +10,10 @@ const MyApp = ({ Component, pageProps}:AppProps) => {
   return (
     <Provider store={store}>
       <React.StrictMode>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Siscone</title>
+        </Head>
         <AppFrame Component={Component} pageProps={pageProps}/>
       </React.StrictMode>
     </Provider>
