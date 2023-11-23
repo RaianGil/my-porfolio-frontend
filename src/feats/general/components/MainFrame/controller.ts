@@ -23,10 +23,10 @@ class Controller {
 
   private async initApp(appReady:boolean) {
     if(!appReady){
+      await setDelay(.2)
       await dispatch(useGetBackendVersion())
       await dispatch(useGetJobs())
       await dispatch(useGetProjects())
-      await setDelay(.2)
       await dispatch(setReady())
       console.log(`pRUEBA: ${process.env.API_URL}`)
     }
