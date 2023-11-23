@@ -4,13 +4,20 @@ import { useAppSelector } from '@/hooks'
 import { selectAppReady } from '@/data/state'
 import { selectGeneral } from '../../state'
 import style from './style.module.css'
-import { Card, Div, Icon, Label } from '@/components' 
+import { Card, Icon } from '@/components' 
+import { JobDisplay } from '../JobDisplay'
+import { ProjectDisplay } from '../ProjectDisplay'
+
 const MainFrame = ({dispatch, router}) => {
   const controller = Controller.getInstance(dispatch, router, useAppSelector(selectGeneral), useAppSelector(selectAppReady))
   if(!controller)
     return <></>
   const {
-    getVersion
+    getVersion,
+    getBackendVersion,
+    getWaringMessage,
+    getJobs,
+    getProjects
   } = controller
   return <>
     <nav className={style.header}>
@@ -26,7 +33,7 @@ const MainFrame = ({dispatch, router}) => {
         <Icon icon='moon' size='1.5rem'/>
       </button>
     </nav>
-    <div className='mb-1'/>
+    <div className='mb-2'/>
     <section>
       <div className={style.content}>
         <div className={`${style.icon}`}>
@@ -39,7 +46,7 @@ const MainFrame = ({dispatch, router}) => {
           <p className={style.txt1}>Desarrollador Frontend hijo de la creatividad</p>
         </div>
       </div>
-      <Card text={`Pagina web en desarrollo version: ${getVersion()}`} type='warning'/> 
+      <Card text={getWaringMessage()} type='warning'/> 
     </section>
     <hr />
     <section>
@@ -47,52 +54,14 @@ const MainFrame = ({dispatch, router}) => {
         <h2>Experiencia</h2>
         <Icon icon='work' size={30} />
       </header>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-        <div style={{ display: 'flex', gap: '.25rem', flexDirection: 'column' }}>
-          <h2>{`Front-End Developer • Prueba`}</h2>
-          <p style={{ color: 'rgb(100, 116, 139)' }}>Jun 2022 — Jul 2023</p>
-        </div>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '.5rem'}}>
-          <ul style={{ marginLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '.5rem' }}>
-            <li style={{color: 'rgba(71, 85, 105, 1)'}}>Administration Dashboard with React and NextJs for the management of patients, appointments, and services performed daily by a physiotherapy center.</li>
-            <li style={{color: 'rgba(71, 85, 105, 1)'}}>Administration Dashboard with React and NextJs for the management of patients, appointments, and services performed daily by a physiotherapy center.</li>
-            <li style={{color: 'rgba(71, 85, 105, 1)'}}>Administration Dashboard with React and NextJs for the management of patients, appointments, and services performed daily by a physiotherapy center.</li>
-            <li style={{color: 'rgba(71, 85, 105, 1)'}}>Administration Dashboard with React and NextJs for the management of patients, appointments, and services performed daily by a physiotherapy center.</li>
-          </ul>
-          <span style={{display: 'flex', gap: '.25rem'}}>
-            <label className={style.pending1}>NextJs</label>
-            <label className={style.pending1}>ReactJs</label>
-            <label className={style.pending1}>ReduxJs</label>
-            <label className={style.pending1}>NodeJs</label>
-          </span>
-        </div>
-      </div>
+      {getJobs().map(job => <JobDisplay job={job} />)}
     </section>
     <section>
       <header className={style.content}>
         <h2>Proyectos</h2>
         <Icon icon='work' size={30} />
       </header>
-      <div style={{display: 'flex', gap: '2.5rem', flexDirection: 'column'}}>
-        <article style={{display: 'flex', gap: '1rem'}}>
-          <a>
-            <span style={{width: '20rem', height: '10rem', background: 'rgba(59,130,246,.2)', display: 'block', overflow: 'hidden', padding:'50px 50px', borderRadius: '10px'}}>
-              <img src='./imgs/landingPage.png' style={{height: '20rem', borderRadius: '10px', boxShadow: '0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)'}}/>
-            </span>
-          </a>
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '.5rem'}}>
-            <h3 style={{fontSize: '1.875rem', lineHeight: '2.25rem'}}>Prueba</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <div style={{display: 'flex', gap: '.5rem'}}>
-              <img style={{width: '1.5rem', height: '1.5rem', background: 'blue', borderRadius: '50%'}}/>
-              <img style={{width: '1.5rem', height: '1.5rem', background: 'blue', borderRadius: '50%'}}/>
-              <img style={{width: '1.5rem', height: '1.5rem', background: 'blue', borderRadius: '50%'}}/>
-            </div>
-          </div>
-        </article>
-      </div>
+      {getProjects().map(project => <ProjectDisplay project={project} />)}
     </section>
     <section>
       <header className={style.content}>
