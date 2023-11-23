@@ -10,7 +10,7 @@ export const JobDisplay = (props) => {
     getJob
   } = controller
   return (
-    <div className={getStyle()}>
+    <article className={getStyle()}>
       <div>
         <h2>{`${getJob().title} • ${getJob().company}`}</h2>
         <p>{getJob().datePeriod}</p>
@@ -23,6 +23,6 @@ export const JobDisplay = (props) => {
           {getJob().tools.map(tool => <label>{tool}</label>)}
         </span>
       </div>
-    </div>
+    </article>
   )
 }

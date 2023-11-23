@@ -17,6 +17,7 @@
 .container > div > span { 
   display: flex; 
   gap: .25rem;
+  flex-wrap: wrap;
 }
 
 .container > div > span > label {

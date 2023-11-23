@@ -10,3 +10,19 @@
   max-width: 728px;
   width: -webkit-fill-available;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  .container > section:nth-child(3) > div {
+    flex-direction: column;
+    text-align: center;
+  }
+  .container > section:nth-child(3) > div > div > p {
+    font-size: 1.5rem;
+  }
+  .container > section:nth-child(3) > div > label {
+    font-size: .5rem;
+  }
+}

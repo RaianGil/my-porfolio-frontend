@@ -1,8 +1,6 @@
 .container { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 1.25rem;
-  color: rgb(100, 116, 139);
+  display: flex;
+  gap: 1rem;
 }
 
 .container > div { 
@@ -40,4 +38,19 @@
 
 .container > div > h2 {
   text-transform: capitalize;
+}
+
+
+@media (max-width: 768px) {
+  .container{
+    flex-direction: column;
+    text-align: center;
+  }
+  .container > a {
+    display: flex;
+    justify-content: center;
+  }
+  .container > div > div {
+    justify-content: center;
+  }
 }

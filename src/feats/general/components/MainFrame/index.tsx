@@ -34,7 +34,7 @@ const MainFrame = ({dispatch, router}) => {
       </button>
     </nav>
     <div className='mb-2'/>
-    <section>
+    <section id="sectionHeader">
       <div className={style.content}>
         <div className={`${style.icon}`}>
           <span>
@@ -54,14 +54,18 @@ const MainFrame = ({dispatch, router}) => {
         <h2>Experiencia</h2>
         <Icon icon='work' size={30} />
       </header>
-      {getJobs().map(job => <JobDisplay job={job} />)}
+      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
+        {getJobs().map(job => <JobDisplay job={job} />)}
+      </div>
     </section>
     <section>
       <header className={style.content}>
         <h2>Proyectos</h2>
         <Icon icon='work' size={30} />
       </header>
-      {getProjects().map(project => <ProjectDisplay project={project} />)}
+      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
+        {getProjects().map(project => <ProjectDisplay project={project} />)}
+      </div>
     </section>
     <section>
       <header className={style.content}>
