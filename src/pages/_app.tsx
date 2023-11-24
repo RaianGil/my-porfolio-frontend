@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps}:AppProps) => {
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Porfolio</title>
-          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+          <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         </Head>
         <AppFrame Component={Component} pageProps={pageProps}/>
       </React.StrictMode>

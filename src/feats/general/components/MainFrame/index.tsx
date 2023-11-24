@@ -54,7 +54,7 @@ const MainFrame = ({dispatch, router}) => {
         <h2>Experiencia</h2>
         <Icon icon='work' size={30} />
       </header>
-      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
+      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column-reverse'}}>
         {getJobs().map(job => <JobDisplay job={job} />)}
       </div>
     </section>

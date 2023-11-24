@@ -7,7 +7,8 @@ class Controller {
     tools: [],
     datePeriod: "",
     descriptions: [],
-    company: ""
+    company: "",
+    id: ""
   }
   constructor() {
   }
@@ -19,10 +20,12 @@ class Controller {
     return this.instance
   }
   refreshData({job}) {
+    console.log(job._id)
     this.style = `${style.container}`
     const dateStart = `${job.dateStart}`.split('T')[0].replaceAll('-', '/')
-    const dateStop = `${job.dateEnd}`.split('T')[0].replaceAll('-', '/')
+    const dateStop = `${job.dateEnd || 'Actualidad'}`.split('T')[0].replaceAll('-', '/')
     this.job.title = job.name
+    this.job.id = job._id
     this.job.tools = job.tools
     this.job.datePeriod = `${dateStart} - ${dateStop}`
     this.job.descriptions = job.desc

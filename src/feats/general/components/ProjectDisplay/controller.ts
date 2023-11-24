@@ -3,6 +3,7 @@ class Controller {
   static instance: Controller
   private style: string
   private project:any = {
+    id: "",
     img: "",
     name: "",
     desc: "",
@@ -21,6 +22,8 @@ class Controller {
   }
   refreshData({project}) {
     this.style = `${style.container}`
+    console.log(project._id)
+    this.project.id = project._id
     this.project.img = project.imgSrc
     this.project.name = project.name
     this.project.desc = project.desc

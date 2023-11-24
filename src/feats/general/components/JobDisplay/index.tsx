@@ -10,7 +10,7 @@ export const JobDisplay = (props) => {
     getJob
   } = controller
   return (
-    <article className={getStyle()}>
+    <article className={getStyle()} key={getJob().id}>
       <div>
         <h2>{`${getJob().title} • ${getJob().company}`}</h2>
         <p>{getJob().datePeriod}</p>
