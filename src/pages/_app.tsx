@@ -8,6 +8,7 @@ import { AppFrame } from '../layout/index'
 
 const MyApp = ({ Component, pageProps}:AppProps) => {
   console.log('api url is', process.env.NEXT_PUBLIC_API_URL, process.env.API_URL)
+  process.env.NEXT_PUBLIC_SECRETS_ACCESS_KEY = 'true'
   return (
     <Provider store={store}>
       <React.StrictMode>
