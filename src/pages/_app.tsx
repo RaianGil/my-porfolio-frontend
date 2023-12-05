@@ -7,7 +7,7 @@ import store from '../data/store'
 import { AppFrame } from '../layout/index'
 
 const MyApp = ({ Component, pageProps}:AppProps) => {
-  console.log('api url is', process.env.NEXT_PUBLIC_API_URL, process.env.API_URL, process.env.PRUEBA)
+  console.log('api url is', process.env.API_URL, process.env.PRUEBA, process.env.PRUEBA1)
   return (
     <Provider store={store}>
       <React.StrictMode>
