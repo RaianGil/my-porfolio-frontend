@@ -17,29 +17,31 @@
   align-items: center;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  color: var(--title);
 }
-
 .icon {
   border: 10px white solid;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
-  background: rgba(59,130,246,.2);
+  background: var(--main);
   color: rgb(71 85 105/1);
 }
 .contact > label {
   display: grid;
   width: 100%;
   padding: .375rem .75rem;
-  background-color: rgba(0,0,0,.05);
+  background-color: var(--btn-disabled-bg);
   border-radius: 0.5rem;
   user-select: all;
-  color:hsl(from color h s l)(71 85 105)
+  color: var(--btn-disabled-txt-color)
 }
 .contact > button {
   padding: .5rem .8rem;
   border: none;
   border-radius: 0.5rem;
+  background-color: var(--btn-disabled-bg);
+  color: var(--ternary);
 }
 .icon > span {
   display: block;
@@ -50,13 +52,13 @@
 }
 
 .txt1 {
-  color: rgba(71, 85, 105, .5);
+  color: var(--ternary);
 }
 
 .title {
   font-size: 2.25rem;
   line-height: 2.5rem;
-  color: rgb(71,85,105)
+  color: var(--title)
 }
 
 .pending1 {
@@ -65,7 +67,6 @@
   padding: .25rem .5rem;
   border-radius: 7px;
 }
-
 .header {
   padding: 1rem 2rem;
   background: rgb(255,255,255/.8);
@@ -76,7 +77,7 @@
   align-items: center;
   position: fixed;
   z-index: 2;
-  color: rgb(71,85,105);
+  color: var(--title);
   top: 0
 }
 

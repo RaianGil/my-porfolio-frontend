@@ -1,6 +1,7 @@
 .container { 
   display: flex;
   gap: 1rem;
+  color: var(--title)
 }
 
 .container > div { 
@@ -17,29 +18,10 @@
   gap: .25rem;
 }
 
-.container > div > span > label {
-  font-size: .9rem;
-  border: 2px solid rgba(0,0,0,.1);
-  padding: .25rem .5rem;
-  border-radius: 7px;
-  text-transform: lowercase;
-}
-
-.container > div > ul > li {
-  color: rgba(71, 85, 105, 1);
-}
-
-.container > div > ul { 
-  margin-left: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: .5rem
-}
-
-.container > div > h2 {
+.container > div > h3 {
   text-transform: capitalize;
+  color: var(--sub-title)
 }
-
 
 @media (max-width: 768px) {
   .container{

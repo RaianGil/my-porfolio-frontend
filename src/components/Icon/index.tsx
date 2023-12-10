@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Icon = ({size=35, color="rgb(42,53,71)", opacity='0.48', icon}:any) => {
+export const Icon = ({size=35, color="currentColor", opacity='0.48', icon}:any) => {
   const iconList = {
     user: <svg width={`${size * .78}`} height={`${size}`} viewBox="0 0 522 668" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M391.167 167.333C391.167 240.971 332.963 300.667 261.167 300.667C189.37 300.667 131.167 240.971 131.167 167.333C131.167 93.6953 189.37 34 261.167 34C332.963 34 391.167 93.6953 391.167 167.333Z" stroke={color} strokeWidth="66.6667" strokeLinecap="round" strokeLinejoin="round"/>

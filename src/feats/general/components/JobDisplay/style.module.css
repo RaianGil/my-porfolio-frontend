@@ -29,7 +29,7 @@
 }
 
 .container > div > ul > li {
-  color: rgba(71, 85, 105, 1);
+  color: inherit;
 }
 
 .container > div > ul { 
@@ -41,4 +41,8 @@
 
 .container > div > h2 {
   text-transform: capitalize;
+  color: var(--sub-title)
+}
+.container > div {
+  color: var(--title)
 }

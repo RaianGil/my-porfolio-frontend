@@ -1,13 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 import actions from "./actions"
 import { AppState } from "../../../data/store/types"
-import { useGetBackendVersion, useGetJobs, useGetProjects } from "../hooks"
+import { useGetBackendVersion, useGetFeedbacks, useGetJobs, useGetProjects } from "../hooks"
 const packageJson = require('../../../../package.json');
 const initialState = {
   mainTitle: 'tu solución a un click de distancia',
   mainText: 'Descubre soluciones de software avanzadas y asesoramiento experto diseñados para complementar tu éxito.',
   jobs: [],
   projects: [],
+  feedbacks: [],
   version: packageJson.version,
   backendVersion: ""
 }
@@ -27,6 +28,12 @@ const generalSlice = createSlice({
         state.projects = payload
       })
       .addCase(useGetProjects.rejected, (state, payload:any) =>{
+        console.log(payload)
+      })
+      .addCase(useGetFeedbacks.fulfilled, (state, {payload}:PayloadAction<any>) => {
+        state.feedbacks = payload
+      })
+      .addCase(useGetFeedbacks.rejected, (state, payload:any) =>{
         console.log(payload)
       })
       .addCase(useGetBackendVersion.fulfilled, (state, {payload}:PayloadAction<any>) => {

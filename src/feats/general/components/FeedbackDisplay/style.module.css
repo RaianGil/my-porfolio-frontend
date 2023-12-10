@@ -1,0 +1,7 @@
+.container {
+  color: var(--title)
+}
+
+.container > h2 {
+  color: var(--sub-title)
+}

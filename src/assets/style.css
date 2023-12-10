@@ -4,7 +4,27 @@
   padding: 0;
   user-select: none;
 }
-
+body {
+  --matisse-50: #f3f6fc;
+  --matisse-100: #e7eef7;
+  --matisse-200: #c9daee;
+  --matisse-300: #9abcdf;
+  --matisse-400: #6498cc;
+  --matisse-500: #407bb7;
+  --matisse-600: #30639d;
+  --matisse-700: #274d7d;
+  --matisse-800: #244368;
+  --matisse-900: #223a58;
+  --matisse-950: #17253a;
+  --title: #223a58;
+  --sub-title: #274d7d;
+  --content: #9d480f;
+  --main: #9abcdf;
+  --ternary: #6498cc;
+  --lines: #c9daee;
+  --btn-disabled-bg: #e5ecf7;
+  --btn-disabled-txt-color: #9eb1c6
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -636,7 +656,7 @@ a:hover {
 }
 
 hr {
-  border-color: rgb(209, 213, 219);
+  border-color: var(--lines);
   border-style: dotted;
   border-width: 1px;
   border-radius: 0.375rem;

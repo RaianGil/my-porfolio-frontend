@@ -1,1 +1,1 @@
-export const apiUrl = process.env.API_URL || "https://raian-gil-backend-dev.vimsoluctions.com"
+export const apiUrl = process.env.API_URL || "https://api.raiangil.vimsoluctions.com"

@@ -5,9 +5,13 @@ import { Provider } from 'react-redux'
 import '../assets/style.css'
 import store from '../data/store'
 import { AppFrame } from '../layout/index'
+import { useRouter } from "next/router"
+import { GetServerSideProps } from 'next'
+
+
+
 
 const MyApp = ({ Component, pageProps}:AppProps) => {
-  console.log('api url is', process.env.API_URL, process.env.PRUEBA, process.env.PRUEBA1)
   return (
     <Provider store={store}>
       <React.StrictMode>

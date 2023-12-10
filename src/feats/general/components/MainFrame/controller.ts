@@ -1,6 +1,6 @@
 import { setReady, unsetReady } from "../../../../data/state"
 import { setDelay } from "../../../../utils"
-import { useGetBackendVersion, useGetJobs, useGetProjects } from "../../hooks"
+import { useGetBackendVersion, useGetFeedbacks, useGetJobs, useGetProjects } from "../../hooks"
 
 let dispatch:any
 class Controller {
@@ -27,8 +27,8 @@ class Controller {
       await dispatch(useGetBackendVersion())
       await dispatch(useGetJobs())
       await dispatch(useGetProjects())
+      await dispatch(useGetFeedbacks())
       await dispatch(setReady())
-      console.log(`pRUEBA: ${process.env.API_URL}`)
     }
   }
 
@@ -54,6 +54,7 @@ class Controller {
     `Pagina web en desarrollo version: ${this.getVersion() || ''}${this.getBackendVersion() || ''}` : ''
   public getJobs = () => this.state.jobs
   public getProjects = () => this.state.projects
+  public getFeedbacks = () => this.state.feedbacks
 
 }
 

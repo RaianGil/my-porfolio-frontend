@@ -2,6 +2,6 @@
 module.exports = {
   output: 'standalone',
   env: {
-    API_URL: process.env.API_URL,
+    NEXT_PUBLIC_SECRETS_ACCESS_KEY: true
   }
 }

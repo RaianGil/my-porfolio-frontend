@@ -7,6 +7,7 @@ import style from './style.module.css'
 import { Card, Icon } from '@/components' 
 import { JobDisplay } from '../JobDisplay'
 import { ProjectDisplay } from '../ProjectDisplay'
+import { FeedbackDisplay } from '../FeedbackDisplay'
 
 const MainFrame = ({dispatch, router}) => {
   const controller = Controller.getInstance(dispatch, router, useAppSelector(selectGeneral), useAppSelector(selectAppReady))
@@ -17,7 +18,8 @@ const MainFrame = ({dispatch, router}) => {
     getBackendVersion,
     getWaringMessage,
     getJobs,
-    getProjects
+    getProjects,
+    getFeedbacks
   } = controller
   return <>
     <nav className={style.header}>
@@ -55,7 +57,7 @@ const MainFrame = ({dispatch, router}) => {
         <Icon icon='work' size={30} />
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column-reverse'}}>
-        {getJobs().map(job => <JobDisplay job={job} />)}
+        {getJobs().map(job => <JobDisplay job={job} key={job._id}/>)}
       </div>
     </section>
     <section>
@@ -64,7 +66,7 @@ const MainFrame = ({dispatch, router}) => {
         <Icon icon='work' size={30} />
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
-        {getProjects().map(project => <ProjectDisplay project={project} />)}
+        {getProjects().map(project => <ProjectDisplay project={project} key={project._id}/>)}
       </div>
     </section>
     <section>
@@ -98,19 +100,8 @@ const MainFrame = ({dispatch, router}) => {
         <h2>Feedback</h2>
         <Icon icon='work' size={30} />
       </header>
-      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
-        <article>
-          <h2>Anónimo</h2>
-          <p style={{color: 'rgba(71, 85, 105, .8)'}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam veritatis ad beatae quibusdam id, voluptatem assumenda unde nulla culpa quas! Molestias doloremque nemo sed fugiat laboriosam corporis deserunt iusto voluptatum.</p>
-        </article>
-        <article>
-          <h2>Anónimo</h2>
-          <p style={{color: 'rgba(71, 85, 105, .8)'}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam veritatis ad beatae quibusdam id, voluptatem assumenda unde nulla culpa quas! Molestias doloremque nemo sed fugiat laboriosam corporis deserunt iusto voluptatum.</p>
-        </article>
-        <article>
-          <h2>Anónimo</h2>
-          <p style={{color: 'rgba(71, 85, 105, .8)'}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam veritatis ad beatae quibusdam id, voluptatem assumenda unde nulla culpa quas! Molestias doloremque nemo sed fugiat laboriosam corporis deserunt iusto voluptatum.</p>
-        </article>
+      <div style={{display: 'flex', gap: '1rem', flexDirection: 'column', marginBottom: '4rem'}}>
+        {getFeedbacks().map(feedback => <FeedbackDisplay feedback={feedback} key={feedback._id}/>)}
       </div>
     </section>
   </>

@@ -17,10 +17,10 @@ export const JobDisplay = (props) => {
       </div>
       <div>
         <ul>
-          {getJob().descriptions.map(description => <li>{description}</li>)}
+          {getJob().descriptions.map(description => <li key={description}>{description}</li>)}
         </ul>
         <span>
-          {getJob().tools.map(tool => <label>{tool}</label>)}
+          {getJob().tools.map(tool => <label key={tool}>{tool}</label>)}
         </span>
       </div>
     </article>

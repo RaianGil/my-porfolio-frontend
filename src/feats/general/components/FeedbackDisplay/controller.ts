@@ -2,14 +2,10 @@ import style from './style.module.css'
 class Controller {
   static instance: Controller
   private style: string
-  private project:any = {
-    id: "",
-    img: "",
+  private feedback:any = {
     name: "",
     desc: "",
-    tools: [],
-    tags: [],
-
+    id: ""
   }
   constructor() {
   }
@@ -20,18 +16,15 @@ class Controller {
     this.instance.refreshData(props)
     return this.instance
   }
-  refreshData({project}) {
+  refreshData({feedback}) {
     this.style = `${style.container}`
-    this.project.id = project._id
-    this.project.img = project.imgSrc
-    this.project.name = project.name
-    this.project.desc = project.desc
-    this.project.tools = [...new Set(project.tools)]
-    this.project.tags = project.tags
-  }
+    this.feedback.name = feedback.name,
+    this.feedback.desc = feedback.desc
+    this.feedback.id = feedback._id
+  } 
 
   public getStyle = () => this.style
-  public getProject = () => this.project
+  public getFeedback = () => this.feedback
 }
 
 export default Controller

@@ -2,7 +2,6 @@ FROM node:18-alpine AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json yarn.lock ./
-COPY .env.production ./
 RUN yarn install --frozen-lockfile
 
 FROM node:18-alpine AS builder
@@ -13,10 +12,6 @@ RUN yarn build
 
 FROM node:18-alpine AS runner
 WORKDIR /app
-
-ENV NODE_ENV production
-ENV NEXT_PUBLIC_SECRETS_ACCESS_KEY true
-ENV PRUEBA1 TINGUIRIQUI_TINGUIS_TINGUIS_TINGUIS
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
@@ -31,4 +26,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["node", "-e", "process.env.PRUEBA1 = 'TINGUIRIQUI_TINGUIS_TINGUIS_TINGUIS';", "server.js"]
+CMD ["node", "server.js"]
