@@ -43,6 +43,9 @@
   background-color: var(--btn-disabled-bg);
   color: var(--ternary);
 }
+.contact > button:hover {
+  scale: 1.1;
+}
 .icon > span {
   display: block;
   width: inherit;
@@ -80,7 +83,23 @@
   color: var(--title);
   top: 0
 }
-
+.socialNetwork {
+  display: flex;
+  gap: .5rem;
+}
+.socialNetwork > a {
+  display: flex;
+  gap: .25rem;
+  align-items: center;
+  border: 2px solid rgba(0,0,0,.08);
+  padding: .5rem 1rem;
+  border-radius: 7px;
+  color: #0384c6;
+  transition: .25s;
+}
+.socialNetwork > a:hover {
+  scale: 1.05
+}
 .header > button {
   border: none;
   background: transparent;

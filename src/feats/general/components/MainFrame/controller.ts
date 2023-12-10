@@ -49,7 +49,7 @@ class Controller {
   // public getVersion = () => this.state.version ? `frontend ${this.state.version.split('-')[0]}` : undefined
   public getVersion = () => this.state.version ? `frontend ${this.state.version}` : undefined
   // public getBackendVersion = () => this.state.backendVersion ? `, backend ${this.state.version.split('-')[0]}` : undefined
-  public getBackendVersion = () => this.state.backendVersion ? `, backend ${this.state.backendVersion}` : undefined
+  public getBackendVersion = () => this.state.backendVersion ? `backend ${this.state.backendVersion}` : undefined
   public getWaringMessage = () => this.state.version || this.state.backendVersion ? 
     `Pagina web en desarrollo version: ${this.getVersion() || ''}${this.getBackendVersion() || ''}` : ''
   public getJobs = () => this.state.jobs

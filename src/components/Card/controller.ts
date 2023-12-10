@@ -3,7 +3,7 @@ class Controller {
   static instance: Controller
   private style: string
   private text: string
-  private type: string
+  private children: any
   private icon: string
   private onClick: any
   constructor() {
@@ -15,14 +15,14 @@ class Controller {
     this.instance.refreshData(props)
     return this.instance
   }
-  refreshData({text, type}) {
-    this.text = text
+  refreshData({children, type}) {
+    this.children = children
     this.style = `${style.container}`
     this.icon = type
   } 
 
   public getStyle = () => this.style
-  public getText = () => this.text
+  public getChildren = () => this.children
   public getIcon = () => this.icon
   public getOnClick = () => this.onClick
 }

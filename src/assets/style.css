@@ -30,7 +30,10 @@ a {
   color: inherit;
 }
 a:hover {
-  font-weight: 300;
+  cursor: pointer;
+}
+a:hover > *:hover {
+  cursor: pointer;
 }
 .d-flex {
   display: flex;

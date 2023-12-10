@@ -45,10 +45,17 @@ const MainFrame = ({dispatch, router}) => {
         </div>
         <div>
           <h1 className={style.title}>Raian Gil</h1>
-          <p className={style.txt1}>Desarrollador Frontend hijo de la creatividad</p>
+          <p className={style.txt1}>Desarrollador Fullstack, Móvil & DevOps</p>
         </div>
       </div>
-      <Card text={getWaringMessage()} type='warning'/> 
+      <Card type='warning'>
+        <label>
+          {`Pagina web en desarrollo version: `}
+          <a href='https://github.com/RaianGil/my-porfolio-frontend' target='blank'>{getVersion()}</a>
+          {getBackendVersion() ? ', ': ''}
+          {getBackendVersion() ? <a href='https://github.com/RaianGil/my-porfolio-backend' target='blank'>{getBackendVersion()}</a> : ''}
+        </label>
+      </Card> 
     </section>
     <hr />
     <section>
@@ -63,7 +70,7 @@ const MainFrame = ({dispatch, router}) => {
     <section>
       <header className={style.content}>
         <h2>Proyectos</h2>
-        <Icon icon='work' size={30} />
+        <Icon icon='star' size={30} />
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
         {getProjects().map(project => <ProjectDisplay project={project} key={project._id}/>)}
@@ -72,14 +79,14 @@ const MainFrame = ({dispatch, router}) => {
     <section>
       <header className={style.content}>
         <h2>Redes Sociales</h2>
-        <Icon icon='work' size={30} />
+        <Icon icon='socialNetwork' size={30} />
       </header>
-      <div style={{display: 'flex', gap: '.5rem'}}>
-        <a style={{display: 'flex', gap: '.25rem', alignItems: 'center', border: '2px solid rgba(0,0,0,.08)', padding: '.5rem 1rem', borderRadius: '7px', color: '#0384c6'}}>
+      <div className={style.socialNetwork}>
+        <a style={{color: '#0384c6'}} href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank'>
           <Icon icon='linkedin' size='1em'/>
           <label>Linkedin</label>
         </a>
-        <a style={{display: 'flex', gap: '.25rem', alignItems: 'center', border: '2px solid rgba(0,0,0,.08)', padding: '.5rem 1rem', borderRadius: '7px', color: '#353434'}}>
+        <a style={{color: '#353434'}} href='https://github.com/RaianGil' target='blank'>
           <Icon icon='github' size='1em'/>
           <label>Github</label>
         </a>
@@ -88,7 +95,7 @@ const MainFrame = ({dispatch, router}) => {
     <section>
       <header className={style.content}>
         <h2>Contacto</h2>
-        <Icon icon='work' size={30} />
+        <Icon icon='mail' size={30} />
       </header>
       <div style={{display: 'flex', gap: '.5rem'}} className={style.contact}>
         <label>raian.gdr@gmail.com</label>
@@ -98,7 +105,7 @@ const MainFrame = ({dispatch, router}) => {
     <section>
       <header className={style.content}>
         <h2>Feedback</h2>
-        <Icon icon='work' size={30} />
+        <Icon icon='comments' size={30} />
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column', marginBottom: '4rem'}}>
         {getFeedbacks().map(feedback => <FeedbackDisplay feedback={feedback} key={feedback._id}/>)}
