@@ -26,7 +26,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
       <div style={{ display: 'flex', gap: '.25rem', alignItems: 'center' }}>
         <div className={`${style.icon} ${style.smallIcon}`}>
           <span>
-            <Icon icon='raianIcon' size={40} />
+            <Icon icon='raianIcon' color={darkMode ? '#ffffff96': '#000'} size={40} />
           </span>
         </div>
         <h3>Raian Gil</h3>
@@ -40,7 +40,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
       <div className={style.content}>
         <div className={`${style.icon}`}>
           <span>
-            <Icon icon='raianIcon' size={155} />
+            <Icon icon='raianIcon' size={155} color={darkMode ? '#ffffff96': '#000'} />
           </span>
         </div>
         <div>
