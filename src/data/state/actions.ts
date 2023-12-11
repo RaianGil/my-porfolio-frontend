@@ -7,6 +7,9 @@ const actions = {
   },
   unsetInitApp: (state:any) => {
     state.appInit = false
+  },
+  setUnsetDarkMode: (state:any) => {
+    state.darkMode = !state.darkMode
   }
 }
 

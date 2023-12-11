@@ -1,5 +1,5 @@
 .container {
-  color: var(--title)
+  color: var(--detail-text)
 }
 
 .container > h2 {

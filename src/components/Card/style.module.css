@@ -1,7 +1,7 @@
 .container {
   width: -webkit-fill-available;
   padding: 1rem .5rem;
-  background: rgba(255, 255, 0, 0.6);
+  background: var(--warning-bg);
   border: 2px solid rgba(145, 145, 0, 0.325);
   color: rgb(145, 145, 0);
   justify-content: center;

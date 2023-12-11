@@ -19,11 +19,15 @@
   flex-wrap: wrap;
   color: var(--title);
 }
+.smallIcon {
+  border: 4px var(--avatar-border-color) solid !important;
+  padding: 0 2px;
+}
 .icon {
-  border: 10px white solid;
+  border: 10px var(--avatar-border-color) solid;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+  box-shadow: 0 10px 15px -3px var(--avatar-bs-color), 0 4px 6px -4px var(--avatar-bs-color);
   background: var(--main);
   color: rgb(71 85 105/1);
 }
@@ -55,7 +59,7 @@
 }
 
 .txt1 {
-  color: var(--ternary);
+  color: var(--sub-title);
 }
 
 .title {
@@ -91,7 +95,7 @@
   display: flex;
   gap: .25rem;
   align-items: center;
-  border: 2px solid rgba(0,0,0,.08);
+  border: 2px solid var(--border-color);
   padding: .5rem 1rem;
   border-radius: 7px;
   color: #0384c6;
@@ -99,6 +103,12 @@
 }
 .socialNetwork > a:hover {
   scale: 1.05
+}
+.socialNetwork > :nth-child(1) {
+  color: #0384c6;
+}
+.socialNetwork > :nth-child(2) {
+  color: var(--git-hub-color);
 }
 .header > button {
   border: none;

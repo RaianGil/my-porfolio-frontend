@@ -17,13 +17,53 @@ body {
   --matisse-900: #223a58;
   --matisse-950: #17253a;
   --title: #223a58;
+  --detail-text: #223a58;
   --sub-title: #274d7d;
   --content: #9d480f;
   --main: #9abcdf;
   --ternary: #6498cc;
   --lines: #c9daee;
   --btn-disabled-bg: #e5ecf7;
-  --btn-disabled-txt-color: #9eb1c6
+  --btn-disabled-txt-color: #9eb1c6;
+  --border-color: rgba(0,0,0,.1);
+  --warning-bg: rgba(255, 255, 0, 0.6);
+  --disabled-bg-color: #e5ecf7;
+  --disabled-txt-color: #a8bacd;
+  --git-hub-color: #353434;
+  --avatar-border-color: #fff;
+  --avatar-bs-color: rgba(0,0,0,.1);
+}
+.dark {
+  --matisse-50: #f3f6fc;
+  --matisse-100: #e7eef7;
+  --matisse-200: #c9daee;
+  --matisse-300: #9abcdf;
+  --matisse-400: #6498cc;
+  --matisse-500: #407bb7;
+  --matisse-600: #30639d;
+  --matisse-700: #274d7d;
+  --matisse-800: #244368;
+  --matisse-900: #223a58;
+  --matisse-950: #17253a;
+  --body-bg: #0d1117;
+  --title: #c9daee;
+  --detail-text: #c9daee;
+  --border-color: #c9daee30;
+  --warning-bg: rgba(255, 255, 0, 0.9);
+  --sub-title: #9abcdf;
+  --content: #9d480f;
+  --main: #244368;
+  --ternary: #6498cc;
+  --lines: #c9daee;
+  --btn-disabled-bg: #17253a;
+  --btn-disabled-txt-color: #71879f;
+  --git-hub-color: #ffffffcf;
+  --disabled-bg-color: #17253a;
+  --disabled-txt-color: #71879f;
+  --avatar-border-color: #17222d;
+  --avatar-bg-color: #2b4f7a;
+  --avatar-bs-color: #f3f6fc07;
+  background: var(--body-bg);
 }
 a {
   text-decoration: none;

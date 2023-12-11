@@ -1,7 +1,7 @@
 import React from 'react'
 import Controller from './controller'
 import { useAppSelector } from '@/hooks'
-import { selectAppReady } from '@/data/state'
+import { selectAppReady, setUnsetDarkMode } from '@/data/state'
 import { selectGeneral } from '../../state'
 import style from './style.module.css'
 import { Card, Icon } from '@/components' 
@@ -9,7 +9,7 @@ import { JobDisplay } from '../JobDisplay'
 import { ProjectDisplay } from '../ProjectDisplay'
 import { FeedbackDisplay } from '../FeedbackDisplay'
 
-const MainFrame = ({dispatch, router}) => {
+const MainFrame = ({dispatch, router, darkMode}) => {
   const controller = Controller.getInstance(dispatch, router, useAppSelector(selectGeneral), useAppSelector(selectAppReady))
   if(!controller)
     return <></>
@@ -24,18 +24,18 @@ const MainFrame = ({dispatch, router}) => {
   return <>
     <nav className={style.header}>
       <div style={{ display: 'flex', gap: '.25rem', alignItems: 'center' }}>
-        <div className={`${style.icon}`} style={{border: '4px white solid', padding: '0 2px'}}>
+        <div className={`${style.icon} ${style.smallIcon}`}>
           <span>
             <Icon icon='raianIcon' size={40} />
           </span>
         </div>
         <h3>Raian Gil</h3>
       </div>
-      <button>
-        <Icon icon='moon' size='1.5rem'/>
+      <button onClick={() => dispatch(setUnsetDarkMode())}>
+        <Icon icon={darkMode ? 'sun': 'moon'} size='1.5rem'/>
       </button>
     </nav>
-    <div className='mb-2'/>
+    <div className='mb-3'/>
     <section id="sectionHeader">
       <div className={style.content}>
         <div className={`${style.icon}`}>
@@ -82,11 +82,11 @@ const MainFrame = ({dispatch, router}) => {
         <Icon icon='socialNetwork' size={30} />
       </header>
       <div className={style.socialNetwork}>
-        <a style={{color: '#0384c6'}} href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank'>
+        <a href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank'>
           <Icon icon='linkedin' size='1em'/>
           <label>Linkedin</label>
         </a>
-        <a style={{color: '#353434'}} href='https://github.com/RaianGil' target='blank'>
+        <a href='https://github.com/RaianGil' target='blank'>
           <Icon icon='github' size='1em'/>
           <label>Github</label>
         </a>

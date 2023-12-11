@@ -12,7 +12,7 @@ export const FeedbackDisplay = (props) => {
   return (
     <article className={getStyle()}>
       <h2>{getFeedback().name}</h2>
-      <p style={{ color: 'rgba(71, 85, 105, .8)' }}>{getFeedback().desc}</p>
+      <p>{getFeedback().desc}</p>
     </article>
   )
 }

@@ -4,7 +4,8 @@ import actions from "./actions"
 
 const initialState = {
   appReady: false,
-  appInit: true
+  appInit: true,
+  darkMode: false
 }
 
 const globalSlice = createSlice({
@@ -18,5 +19,6 @@ const globalSlice = createSlice({
 
 export const selectGlobal = (state:AppState) => state.global
 export const selectAppReady = (state:AppState) => state.global.appReady
-export const { setReady, unsetReady, unsetInitApp } = globalSlice.actions
+export const selectDarkMode = (state:AppState) => state.global.darkMode
+export const { setReady, unsetReady, unsetInitApp, setUnsetDarkMode } = globalSlice.actions
 export const globalReducer = globalSlice.reducer
