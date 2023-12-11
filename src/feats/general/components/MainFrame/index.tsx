@@ -1,15 +1,15 @@
 import React from 'react'
 import Controller from './controller'
 import { useAppSelector } from '@/hooks'
-import { selectAppReady, setUnsetDarkMode } from '@/data/state'
+import { selectAppReady, setUnsetDBMode, setUnsetDarkMode } from '@/data/state'
 import { selectGeneral } from '../../state'
 import style from './style.module.css'
-import { Card, Icon } from '@/components' 
+import { Card, Icon, ImgIcon } from '@/components' 
 import { JobDisplay } from '../JobDisplay'
 import { ProjectDisplay } from '../ProjectDisplay'
 import { FeedbackDisplay } from '../FeedbackDisplay'
 
-const MainFrame = ({dispatch, router, darkMode}) => {
+const MainFrame = ({dispatch, router, darkMode, dbMode}) => {
   const controller = Controller.getInstance(dispatch, router, useAppSelector(selectGeneral), useAppSelector(selectAppReady))
   if(!controller)
     return <></>
@@ -43,9 +43,12 @@ const MainFrame = ({dispatch, router, darkMode}) => {
             <Icon icon='raianIcon' size={155} color={darkMode ? '#ffffff96': '#000'} />
           </span>
         </div>
-        <div>
+        <div className={style.infoContainer}>
           <h1 className={style.title}>Raian Gil</h1>
           <p className={style.txt1}>Desarrollador Fullstack, Móvil & DevOps</p>
+          <div>
+            <button className='btn' onClick={() => dispatch(setUnsetDBMode())}>{'Dragon Ball Mode'}</button>
+          </div>
         </div>
       </div>
       <Card type='warning'>
@@ -61,7 +64,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
     <section>
       <header className={style.content}>
         <h2>Experiencia</h2>
-        <Icon icon='work' size={30} />
+        {dbMode ? <ImgIcon name={'dbSevenStart'} size={30}/> : <Icon icon='work' size={30} />}
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column-reverse'}}>
         {getJobs().map(job => <JobDisplay job={job} key={job._id}/>)}
@@ -70,7 +73,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
     <section>
       <header className={style.content}>
         <h2>Proyectos</h2>
-        <Icon icon='star' size={30} />
+        {dbMode ? <ImgIcon name={'dbSixStart'} size={30}/> : <Icon icon='star' size={30} />}
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column'}}>
         {getProjects().map(project => <ProjectDisplay project={project} key={project._id}/>)}
@@ -79,7 +82,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
     <section>
       <header className={style.content}>
         <h2>Redes Sociales</h2>
-        <Icon icon='socialNetwork' size={30} />
+        {dbMode ? <ImgIcon name={'dbFiveStart'} size={30}/> : <Icon icon='socialNetwork' size={30} />}
       </header>
       <div className={style.socialNetwork}>
         <a href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank'>
@@ -95,7 +98,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
     <section>
       <header className={style.content}>
         <h2>Contacto</h2>
-        <Icon icon='mail' size={30} />
+        {dbMode ? <ImgIcon name={'dbFourStart'} size={30}/> : <Icon icon='mail' size={30} />}
       </header>
       <div style={{display: 'flex', gap: '.5rem'}} className={style.contact}>
         <label>raian.gdr@gmail.com</label>
@@ -105,7 +108,7 @@ const MainFrame = ({dispatch, router, darkMode}) => {
     <section>
       <header className={style.content}>
         <h2>Feedback</h2>
-        <Icon icon='comments' size={30} />
+        {dbMode ? <ImgIcon name={'dbThreeStart'} size={30}/> : <Icon icon='comments' size={30} /> }
       </header>
       <div style={{display: 'flex', gap: '1rem', flexDirection: 'column', marginBottom: '4rem'}}>
         {getFeedbacks().map(feedback => <FeedbackDisplay feedback={feedback} key={feedback._id}/>)}

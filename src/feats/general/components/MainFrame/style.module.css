@@ -31,6 +31,11 @@
   background: var(--main);
   color: rgb(71 85 105/1);
 }
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
 .contact > label {
   display: grid;
   width: 100%;
@@ -83,7 +88,7 @@
   backdrop-filter: blur(16px);
   align-items: center;
   position: fixed;
-  z-index: 2;
+  z-index: 2 !important;
   color: var(--title);
   top: 0
 }

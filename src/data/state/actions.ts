@@ -10,6 +10,9 @@ const actions = {
   },
   setUnsetDarkMode: (state:any) => {
     state.darkMode = !state.darkMode
+  },
+  setUnsetDBMode: (state:any) => {
+    state.dbMode = !state.dbMode
   }
 }
 

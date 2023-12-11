@@ -5,10 +5,38 @@
   flex-direction: column;
   gap: 4rem;
 }
-
+.bgDragonBall {
+  background: url('https://wallpaperaccess.com/full/2639197.png');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bgDragonBall > * > * > * > * > svg > path:nth-child(10) {
+  fill-opacity: 1;
+}
+.bgDragonBall > * > * > * > * > svg > path:nth-child(12) {
+  fill-opacity: .2;
+}
+.bgDragonBall > * > * > * > * > svg > path:nth-child(5), .bgDragonBall > * > * > * > * > svg > path:nth-child(3) {
+  fill: #2a757a;
+} 
+.container::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  max-width: 793px;
+  background-color: var(--body-bg);
+  z-index: 0;
+  opacity: .9;
+}
 .container > * {
   max-width: 728px;
   width: -webkit-fill-available;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

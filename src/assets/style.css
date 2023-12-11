@@ -32,6 +32,7 @@ body {
   --git-hub-color: #353434;
   --avatar-border-color: #fff;
   --avatar-bs-color: rgba(0,0,0,.1);
+  --body-bg: #fff;
 }
 .dark {
   --matisse-50: #f3f6fc;
@@ -64,6 +65,16 @@ body {
   --avatar-bg-color: #2b4f7a;
   --avatar-bs-color: #f3f6fc07;
   background: var(--body-bg);
+}
+.btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--btn-disabled-bg);
+  color: var(--ternary);
+}
+.btn:hover {
+  scale: 1.05;
 }
 a {
   text-decoration: none;
