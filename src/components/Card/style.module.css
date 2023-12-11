@@ -10,3 +10,12 @@
   gap: .5rem;
   align-items: center;
 }
+
+.container > label > a {
+  font-weight: 600;
+  transition: .25s;
+}
+
+.container > label > a:hover {
+  font-size: 1.08rem;
+}
