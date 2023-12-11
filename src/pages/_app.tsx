@@ -16,7 +16,7 @@ const MyApp = ({ Component, pageProps}:AppProps) => {
     <Provider store={store}>
       <React.StrictMode>
         <Head>
-          <link rel="shortcut icon" href="/static/favicon.ico" />
+          <link rel="shortcut icon" href="https://i.imgur.com/6eWlP3z.png" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Porfolio</title>
           <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
