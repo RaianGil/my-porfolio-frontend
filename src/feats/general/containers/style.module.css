@@ -51,6 +51,6 @@
     font-size: 1.5rem;
   }
   .container > section:nth-child(3) > div > label {
-    font-size: .5rem;
+    font-size: 1rem;
   }
 }
