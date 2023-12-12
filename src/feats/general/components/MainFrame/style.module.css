@@ -36,6 +36,27 @@
   flex-direction: column;
   gap: .25rem;
 }
+.infoContainer > div {
+  display: flex;
+  gap: .25rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.infoContainer > div > button {
+  min-height: 37.6px;
+}
+.infoContainer > div > a {
+  display: flex;
+  gap: .2rem;
+  align-items: center;
+}
+.infoContainer > div > :nth-child(2) {
+  color: #0384c6;
+}
+.infoContainer > div > :nth-child(3) {
+  color: var(--git-hub-color);
+}
 .contact > label {
   display: grid;
   width: 100%;
@@ -108,12 +129,6 @@
 }
 .socialNetwork > a:hover {
   scale: 1.05
-}
-.socialNetwork > :nth-child(1) {
-  color: #0384c6;
-}
-.socialNetwork > :nth-child(2) {
-  color: var(--git-hub-color);
 }
 .header > button {
   border: none;

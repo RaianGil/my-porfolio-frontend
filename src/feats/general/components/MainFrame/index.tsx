@@ -47,6 +47,18 @@ const MainFrame = ({dispatch, router, darkMode, dbMode}) => {
           <h1 className={style.title}>Raian Gil</h1>
           <p className={style.txt1}>Desarrollador Fullstack, Móvil & DevOps</p>
           <div>
+            <a href='https://drive.google.com/uc?export=download&id=1xMZSd2RLPgDFhayUINUDxEnyxeiYcBgr' className='btn'>
+              <Icon icon='paper' size='1em'/>
+              <label>Resume</label>
+            </a>
+            <a href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank' className='btn'>
+              <Icon icon='linkedin' size='1em'/>
+              <label>Linkedin</label>
+            </a>
+            <a href='https://github.com/RaianGil' target='blank' className='btn'>
+              <Icon icon='github' size='1em'/>
+              <label>Github</label>
+            </a>
             <button className='btn' onClick={() => dispatch(setUnsetDBMode())}>{'Dragon Ball Mode'}</button>
           </div>
         </div>
@@ -79,20 +91,12 @@ const MainFrame = ({dispatch, router, darkMode, dbMode}) => {
         {getProjects().map(project => <ProjectDisplay project={project} key={project._id}/>)}
       </div>
     </section>
-    <section>
+    <section style={{display: 'none'}}>
       <header className={style.content}>
         <h2>Redes Sociales</h2>
         {dbMode ? <ImgIcon name={'dbFiveStart'} size={30}/> : <Icon icon='socialNetwork' size={30} />}
       </header>
       <div className={style.socialNetwork}>
-        <a href='https://www.linkedin.com/in/raian-michael-gil-del-rosario-8b0a55170' target='blank'>
-          <Icon icon='linkedin' size='1em'/>
-          <label>Linkedin</label>
-        </a>
-        <a href='https://github.com/RaianGil' target='blank'>
-          <Icon icon='github' size='1em'/>
-          <label>Github</label>
-        </a>
       </div>
     </section>
     <section>
