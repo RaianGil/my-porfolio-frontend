@@ -45,6 +45,7 @@
 }
 .infoContainer > div > button {
   min-height: 37.6px;
+  font-size: 1rem;
 }
 .infoContainer > div > a {
   display: flex;
