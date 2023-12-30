@@ -93,7 +93,8 @@ a:hover > *:hover {
 }
 
 .w-fill {
-  width: -webkit-fill-available
+  width: -webkit-fill-available;
+  width: -moz-available;
 }
 
 .m-1 {

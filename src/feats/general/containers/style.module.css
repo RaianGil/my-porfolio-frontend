@@ -36,6 +36,7 @@
 .container > * {
   max-width: 728px;
   width: -webkit-fill-available;
+  width: -moz-available;
   z-index: 1;
 }
 

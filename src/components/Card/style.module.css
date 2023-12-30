@@ -1,5 +1,6 @@
 .container {
   width: -webkit-fill-available;
+  width: -moz-available;
   padding: 1rem .5rem;
   background: var(--warning-bg);
   border: 2px solid rgba(145, 145, 0, 0.325);
