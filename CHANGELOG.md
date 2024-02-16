@@ -2,6 +2,10 @@
 
 <!-- [NEXT_ENTRY] -->
 
+## [v0.0.47-beta.1](RaianGil/my-porfolio-frontend?version=GTv0.0.47-beta.1) - 2024-02-16
+
+
+
 ## [v0.0.46-beta.1](RaianGil/my-porfolio-frontend?version=GTv0.0.46-beta.1) - 2024-02-15
 
 
